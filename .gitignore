@@ -16,6 +16,7 @@ obj/
 *.suo
 *.user
 *.sln.docstates
+*.vsidx
 
 # Pacotes NuGet
 *.nuget.props
