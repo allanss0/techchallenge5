@@ -41,4 +41,4 @@ jobs:
           dir
 
       - name: Implantação no Kubernetes
-        run: kubectl apply -f techchallenge5/yamlAKS.yml
+        run: kubectl apply -f yamlAKS.yml
