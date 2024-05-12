@@ -1,6 +1,6 @@
 namespace TechChallenge5
 {
-    public class WeatherForecastttt
+    public class WeatherForecast
     {
         public DateOnly Date { get; set; }
 
