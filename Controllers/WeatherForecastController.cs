@@ -38,9 +38,9 @@ namespace TechChallenge5.Controllers
         "Freezing1", "Bracing1", "Chilly1", "Cool1", "Mild1", "Warm1", "Balmy1", "Hot1", "Sweltering1", "Scorching1"
     };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<tempoController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<tempoController> logger)
         {
             _logger = logger;
         }
