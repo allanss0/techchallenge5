@@ -1,0 +1,23 @@
+# Arquivos de compilação
+bin/
+obj/
+
+# Arquivos de dependência
+*.dll
+*.exe
+*.pdb
+*.dll.config
+*.exe.config
+
+# Arquivos temporários
+*.log
+*.vscode
+.vscode/
+*.suo
+*.user
+*.sln.docstates
+
+# Pacotes NuGet
+*.nuget.props
+*.paket.props
+*.paket.targets
