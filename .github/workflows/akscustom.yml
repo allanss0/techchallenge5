@@ -1,0 +1,44 @@
+﻿name: Pipeline TechChallenge5
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Dotnet restore
+        run: dotnet restore
+
+      - name: Dotnet publish
+        run: dotnet publish -c Release -o ./publish
+
+      - name: Set up kubectl
+        uses: azure/k8s-set-context@v1
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.FIAPAKSCONFIG }}
+          version: 1.21.0
+
+      - name: Docker login
+        run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Docker build
+        run: docker build -t allanss/techchallenge5:latest .
+
+      - name: Docker push
+        run: docker push allanss/techchallenge5:latest
+
+      - name: Listar arquivos no diretório
+        run: |
+          echo "Executando dir ... "
+          dir
+
+      - name: Implantação no Kubernetes
+        run: kubectl apply -f techchallenge5/yamlAKS.yml
