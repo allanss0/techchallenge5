@@ -1,0 +1,12 @@
+﻿apiVersion: v1
+kind: Pod
+metadata:
+    name: techchallenge5pod
+    labels:
+        app: techchallenge5pod
+spec:
+    containers:
+    - name: techchallenge5pod
+      image: allanss/techchallenge5
+      ports:
+      - containerPort: 80
