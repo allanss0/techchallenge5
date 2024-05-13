@@ -13,6 +13,6 @@ public class Filme
     public string Genero { get; set; }
 
     [Required(ErrorMessage = "A duracao é obrigatoria")]
-    [Range(50,600,ErrorMessage ="Intervalo de tempo invalido,-- minimo 70 e maximo 600")]
+    [Range(50,600,ErrorMessage ="Intervalo de tempo invalido,-- minimo 50 e maximo 600")]
     public int Duracao { get; set; }
 }
