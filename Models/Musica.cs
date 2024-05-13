@@ -4,7 +4,7 @@ namespace Techchallenge5.Models
 {
     public class Musica
     {
-        public string Banda { get; set; }
+        public string NomeBanda { get; set; }
         public string Album { get; set; }
         [Required]
         public string Nome { get; set; }
